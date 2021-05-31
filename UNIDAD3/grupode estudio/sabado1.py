@@ -1,7 +1,5 @@
 
 
-
-
  #----Escribir un programa que gestione las facturas pendientes
  #  de cobro de una empresa. Las facturas se almacenarán en un diccionario
  #  donde la clave de cada factura será el número de factura y 
@@ -65,25 +63,33 @@ if __name__=='__main__':
 
         menu()
         command = input()
-        command = command.upper()        
+        command = command.upper()  
+        print()      
 
         if command == 'C':
            print("-> Adicionando Factura".center(100)) 
            AgregarFactura()
            print()
-           print('Facturas registradas',facturas)     
+           print('Facturas registradas')   
+           for x in facturas:
+            print(x,'---->',facturas[x]) 
+               
            X=sum(facturas.values())
-           print(F'CANTIDAD COBRADA {X-X} $, CANTIDAD POR COBRAR: {X} $')
+           print(F'CANTIDAD COBRADA $ {X-X} , CANTIDAD POR COBRAR: $ {X} ')
            print()               
 
         elif command == 'R':
          PagarFactura()
-         print('Facturas registradas',facturas)     
-         print()    
+         print('Facturas registradas')     
+         for x in facturas:
+          print(x,'---->',facturas[x]) 
+          #print()   
 
         elif command == 'V':
-          print("fACTURAS ALMACENADAS")
-          print(facturas)   
+          print("FACTURAS ALMACENADAS")
+          #print(facturas)  
+          for x in facturas:
+            print(x,'---->',facturas[x]) 
           print()     
 
         elif command == 'E':
